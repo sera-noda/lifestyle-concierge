@@ -130,7 +130,7 @@ section { padding:72px 0; border-bottom:1px solid var(--border); }
 
 /* KPI */
 .kpi-row { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); margin:24px 0; }
-.ke); padding:20px 16px; text-align:center; }
+.kpi { background:var(--white); padding:20px 16px; text-align:center; }
 .kpi-val {  font-size:24px; color:var(--navy); line-height:1; margin-bottom:6px; }
 .kpi-lbl { font-size:10px; letter-spacing:0.1em; color:var(--text-muted); }
 
@@ -138,132 +138,106 @@ section { padding:72px 0; border-bottom:1px solid var(--border); }
 .tier-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); margin:24px 0; }
 .tier { background:var(--white); padding:28px 24px; }
 .tier.primary { background:var(--surface); }
-.tier-badge { font-size:9px; letter-spacing:0.3em; color:var(--accent); text-transform:uppercase; margin-bottom:12px; font-weight:500; }
-.tier-title { font-family:'Noto Serif JP',serif; font-size:18px; color:var(--navy); margin-bottom:16px; }
-.tier-price { font-size:28px; color:var(--accent); margin-bottom:4px; }
-.tier-period { font-size:11px; color:var(--text-muted); margin-bottom:20px; }
-.tier-feature { font-size:12px; color:var(--text-muted); line-height:1.8; margin-bottom:12px; padding-left:20px; position:relative; }
-.tier-feature::before { content:'✓'; position:absolute; left:0; color:var(--green); font-weight:600; }
-.tier-btn { display:inline-block; padding:10px 20px; background:var(--accent); color:#fff; text-decoration:none; font-size:12px; letter-spacing:0.05em; border-radius:3px; transition:background 0.2s; margin-top:16px; }
-.tier-btn:hover { background:var(--accent-light); }
+.tier-badge { font-size:9px; letter-spacing:0.3em; color:var(--accent); text-transform:uppercase; margin-bottom:12px; }
+.tier-name { font-family:'Noto Serif JP',serif; font-size:18px; color:var(--navy); margin-bottom:4px; }
+.tier-price {  font-size:22px; color:var(--accent); margin-bottom:4px; }
+.tier-price span { font-size:11px; color:var(--text-muted); font-family:'Noto Sans JP',sans-serif; }
+.tier-features { margin-top:16px; list-style:none; }
+.tier-features li { font-size:11px; color:var(--text-muted); padding:6px 0; border-bottom:1px solid var(--border); display:flex; gap:10px; }
+.tier-features li::before { content:'·'; color:var(--accent); flex-shrink:0; }
 
-/* TIMELINE/ROADMAP */
-.roadmap { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:24px 0; }
-.roadmap-item { background:var(--surface); padding:20px 16px; border-radius:3px; text-align:center; }
-.roadmap-item.done { background:var(--green); color:#fff; }
-.roadmap-item.done .road-time { color:rgba(255,255,255,0.8); }
-.roadmap-item.done .road-title { color:#fff; }
-.road-time { display:block; font-size:12px; color:var(--green); margin-bottom:8px; font-weight:500; }
-.road-title { display:block; font-size:13px; color:var(--navy); }
+/* FLOW */
+.flow { display:grid; grid-template-columns:repeat(6,1fr); gap:1px; background:var(--border); margin:24px 0; }
+.flow-item { background:var(--white); padding:16px 12px; text-align:center; }
+.flow-step {  font-size:9px; color:var(--accent-light); margin-bottom:6px; }
+.flow-text { font-size:10px; color:var(--text-muted); line-height:1.5; }
 
-/* GROWTH/FINANCIAL TABLE */
-.growth-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:12px; }
-.growth-table thead tr { background:var(--navy); }
-.growth-table th { padding:12px; text-align:left; font-weight:400; color:#fff; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; }
-.growth-table td { padding:12px; border-bottom:1px solid var(--border); color:var(--text); }
-.growth-table tr:nth-child(even) td { background:var(--surface); }
-.growth-table tr:hover td { background:var(--surface2); }
-.growth-cell.profit { color:var(--green); }
-.growth-cell.accum { color:var(--accent); }
-.growth-cell.total { color:var(--navy); font-weight:600; }
+/* GROWTH */
+.growth-row { display:grid; grid-template-columns;80px 1fr 1fr 1fr 1fr; gap:1px; background:var(--border); margin-bottom:1px; }
+.growth-cell { background:var(--white); padding:12px 16px; font-size:12px; color:var(--text-muted); }
+.growth-cell.head { background:var(--surface2); font-size:9px; letter-spacing:0.15em; color:var(--navy); text-transform:uppercase; font-weight:500; }
+.growth-cell.yr {  color:var(--navy); font-weight:500; }
+.growth-cell.profit {  color:var(--green); font-weight:500; }
+.growth-cell.accum {  color:var(--accent); font-weight:500; }
+.growth-cell.total { background:var(--navy); color:#fff;  font-weight:500; }
 
-/* COMPARISON CHART */
-.div-chart { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:24px 0; }
-.div-item { background:var(--surface); padding:20px; border-radius:3px; }
-.div-item.highlight { background:var(--accent); color:#fff; }
-.div-title { font-size:13px; font-weight:500; color:var(--navy); margin-bottom:12px; }
-.div-item.highlight .div-title { color:#fff; }
-.div-val { display:flex; align-items:baseline; gap:4px; }
-.div-cell-value { font-size:24px; color:var(--accent); }
-.div-item.highlight .div-cell-value { color:#fff; }
-.div-unit { font-size:12px; color:var(--text-muted); }
-.div-item.highlight .div-unit { color:rgba(255,255,255,0.8); }
+/* ROADMAP */
+.road-item { display:grid; grid-template-columns:140px 1fr; gap:1px; background:var(--border); margin-bottom:1px; }
+.road-time { background:var(--surface2); padding:16px 20px; font-size:11px; color:var(--navy); font-weight:500; display:flex; align-items:center; letter-spacing:0.05em; }
+.road-content { background:var(--white); padding:16px 24px; }
+.road-title { font-size:12px; color:var(--navy); font-weight:500; margin-bottom:4px; }
+.road-items { font-size:11px; color:var(--text-muted); line-height:1.9; }
 
-/* WORKFLOW / PROCESS DIAGRAM */
-.workflow { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin:24px 0; }
-.wf-box { background:var(--surface); padding:16px 12px; text-align:center; border-radius:3px; position:relative; }
-.wf-box::after { content:'→'; position:absolute; right:-22px; top:50%; transform:translateY(-50%); font-size:20px; color:var(--accent); font-weight:300; }
-.wf-box:last-child::after { content:''; }
-.wf-num { display:flex; align-items:center; justify-content:center; width:28px; height:28px; background:var(--accent); color:#fff; border-radius:50%; font-size:12px; font-weight:600; margin:0 auto 10px; }
-.wf-title { font-size:12px; font-weight:500; color:var(--navy); margin-bottom:6px; }
-.wf-desc { font-size:11px; color:var(--text-muted); line-height:1.6; }
-
-/* ROI CALCULATION */
-.roi-calc { background:var(--surface); padding:28px; border-radius:3px; margin:24px 0; }
-.roi-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-.roi-item { border-right:1px solid var(--border); padding-right:20px; }
-.roi-item:last-child { border-right:none; padding-right:0; }
-.roi-label { font-size:11px; letter-spacing:0.1em; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px; }
-.wf-roi-value { font-size:32px; color:var(--accent); }
-
-/* FEATURE LIST */
-.feature-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:24px 0; }
-.feature-item { padding:0; }
-.feature-icon { width:32px; height:32px; background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:600; margin-bottom:12px; }
-.feature-title { font-size:13px; font-weight:500; color:var(--navy); margin-bottom:6px; }
-.feature-desc { font-size:12px; color:var(--text-muted); line-height:1.8; }
+/* NOTE */
+.note { font-size:11px; color:var(--text-muted); margin-top:8px; padding-left:12px; border-left:2px solid var(--border); line-height:1.8; }
 
 /* FOOTER */
-footer { background:var(--navy); color:#fff; padding:40px 0; margin-top:56px; }
-.footer-content { max-width:800px; margin:0 auto; padding:0 80px; }
-.footer-link { color:rgba(255,255,255,0.7); text-decoration:none; font-size:11px; }
-.footer-link:hover { color:#fff; }
+footer { padding:40px 0; background:var(--navy); }
+footer .container { display:flex; justify-content:space-between; align-items:center; }
+footer p { font-size:10px; color:rgba(255,255,255,0.4); letter-spacing:0.1em; }
 
-/* RESPONSIVE */
-@media (max-width:768px) {
+@media(max-width:700px){
+  .cover-inner,.container { padding:0 24px; }
+  .cover-meta,.kpi-row,.tier-grid,.flow { grid-template-columns:1fr 1fr; }
+  .growth-row { grid-template-columns:60px 1fr 1fr; }
+  .growth-cell:nth-child(4),.growth-cell:nth-child(5) { display:none; }
   nav { padding:0 20px; }
-  .container { padding:0 20px; }
-  .cover-inner { padding:0 20px; }
-  .cover-meta { grid-template-columns:1fr; }
-  .kpi-row { grid-template-columns:repeat(2,1fr); }
-  .tier-grid { grid-template-columns:1fr; }
-  .roadmap { grid-template-columns:repeat(2,1fr); }
-  .div-chart { grid-template-columns:1fr; }
-  .workflow { grid-template-columns:repeat(2,1fr); }
-  .feature-grid { grid-template-columns:1fr; }
-  .roi-grid { grid-template-columns:1fr; }
-  .roi-item { border-right:none; border-bottom:1px solid var(--border); padding-right:0; padding-bottom:20px; }
+  .nav-links { display:none; }
 }
 </style>
 </head>
 <body>
 
-<nav>
-  <span class="nav-brand">Lifestyle Concierge</span>
+<nav class="no-print">
+  <div class="nav-brand">Lifestyle Concierge｜事業計画概要書</div>
   <ul class="nav-links">
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#strategy">Strategy</a></li>
-    <li><a href="#market">Market</a></li>
-    <li><a href="#plan">Plan</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#overview">事業概要</a></li>
+    <li><a href="#structure">事業構造</a></li>
+    <li><a href="#revenue">収益モデル</a></li>
+    <li><a href="#membership">会員設計</a></li>
+    <li><a href="#simulator">シミュレーター</a></li><li><a href="#growth">成長計画</a></li>
+    <li><a href="#roadmap">実行計画</a></li>
   </ul>
-  <button class="nav-print" onclick="window.print()">Print</button>
+  <button class="nav-print" onclick="window.print()">印刷・PDF</button>
 </nav>
 
-<section class="cover">
+<!-- COVER -->
+<div class="cover" style="padding-top:52px;">
   <div class="cover-inner">
-    <div class="cover-label">Business Plan Document</div>
-    <h1 class="cover-title">事業計画概要書</h1>
-    <div class="cover-subtitle">Lifestyle Concierge Service Platform</div>
+    <div class="cover-label">事業計画概要書</div>
+    <h1 class="cover-title">ライフスタイル<br>コンシェルジュ事業</h1>
+    <div class="cover-subtitle">文化・滞在・移動・体験を統合した会員制ライフスタイル・プラットフォーム</div>
     <div class="cover-meta">
       <div>
-        <div class="meta-item-label">Prepared</div>
-        <div class="meta-item-val">March 2025</div>
+        <div class="meta-item-label">事業エリア</div>
+        <div class="meta-item-val">三浦半島・伊豆半島エリア</div>
       </div>
       <div>
-        <div class="meta-item-label">Fiscal Year</div>
-        <div class="meta-item-val">2025-2027</div>
+        <div class="meta-item-label">事業形態</div>
+        <div class="meta-item-val">オーナー会員権型<br>不動産運用事業</div>
       </div>
       <div>
-        <div class="meta-item-label">Region</div>
-        <div class="meta-item-val">Japan</div>
+        <div class="meta-item-label">取扱区分</div>
+        <div class="meta-item-val">Confidential<br>社外秘</div>
       </div>
     </div>
   </div>
-</section>物件コストに対する販売倍率は400%に設定されており、競合する不動産投資モデルと比較して卓越した資本効率を有する。</p>
+</div>
+
+<!-- 1. 事業概要 -->
+<section id="overview">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">事業概要</h2>
+    </div>
+
+    <p class="body-text">本事業は、富裕層を主たる対象顧客として、<strong>文化（アートギャラリー・サロン）・滞在（別荘）・移動（専用車両送迎）・体験（スポーツ全般）</strong>の四軸を統合したライフスタイル・プラットフォームの構築・運営を目的とする。</p>
+
+    <p class="body-text">事業の核心は、物件取得費を大幅に上回るオーナー会員権の販売により初期投資を回収しつつ、ゲスト稼働収益と年会費により継続的なキャッシュフローを確保する点にある。物件コストに対する販売倍率は400%に設定されており、競合する不動産投資モデルと比較して卓越した資本効率を有する。</p>
 
     <div class="highlight-box">
-      <p><strong>差別化の本質：</strong>競合他社が模倣可能な構造的優位性にとどまらず、事業設計者の審美的価値観（空間・文化・スポーツ・自然の統合）に基づくブランドの唯一性が参入障壁を形成する。</p>
+      <p><strong>差別化の本質：</strong>競合他社が模倣可能な構造的優位性にとどまらず、事業設計者の審美的価値観（空間・㚇化・スポーツ・自然の統合）に基づくブランドの唯一性が参入障壁を形成する。</p>
     </div>
 
     <div class="kpi-row">
@@ -314,7 +288,9 @@ footer { background:var(--navy); color:#fff; padding:40px 0; margin-top:56px; }
     <div class="sec-header" style="margin-top:48px;margin-bottom:24px;">
       <span class="sec-num">02-2</span>
       <h2 class="sec-title" style="font-size:16px;">三本柱サービス</h2>
-    </div>    <table class="tbl">
+    </div>
+
+    <table class="tbl">
       <thead><tr><th>サービス</th><th>内容</th><th>位置づけ</th></tr></thead>
       <tbody>
         <tr><td class="bold">文化</td><td>アートギャラリー・定期セミナー・会員コミュニティ（都内サロン）</td><td>ブランドの思想的拠点・集客導線の起点</td></tr>
@@ -365,48 +341,88 @@ footer { background:var(--navy); color:#fff; padding:40px 0; margin-top:56px; }
     <table class="tbl">
       <thead><tr><th>項目</th><th>1年目</th><th>2〜3年目</th><th>4年目以降</th></tr></thead>
       <tbody>
-        <tr style="background:#f8f9fc;"><td colspan="4" style="font-size:10px;letter-spacing:0.15em;color:#2A5298;text-transform:uppercase;">販売を想定</td></tr>
-        <tr><td>販売口数</td><td class="num">1</td><td class="num">3</td><td class="num">6</td></tr>
-        <tr><td>販売金额</td><td class="num">2億</td><td class="num">6億</td><td class="num">12億</td></tr>
-        <tr style="background:#f8f9fc;"><td colspan="4" style="font-size:10px;letter-spacing:0.15em;color:#2A5298;text-transform:uppercase;">販売削減</td></tr>
-        <tr><td>物件取得・改装費</td><td class="num">-5,000万</td><td class="num">-15,000万</td><td class="num">-30,000万</td></tr>
-        <tr><td>販売成功率（30%）</td><td class="num">-600万</td><td class="num">-1,800万</td><td class="num">-3,600万</td></tr>
-        <tr><td>一棟貸しコスト</td><td class="num">-1,000万</td><td class="num">-3,000万</td><td class="num">-6,000万</td></tr>
-        <tr style="background:#f8f9fc;"><td colspan="4" style="font-size:10px;letter-spacing:0.15em;color:#2A5298;text-transform:uppercase;">収益算定</td></tr>
-        <tr><td class="bold">稼働益（1棟）</td><td class="num">3,400万</td><td class="num">10,200万</td><td class="num">20,400万</td></tr>
-        <tr><td>ゲスト宿泊稼働率（50%）</td><td class="num">?</td><td class="num">?</td><td class="num">?</td></tr>
+        <tr style="background:#f8f9fc;"><td colspan="4" style="font-size:10px;letter-spacing:0.15em;color:#2A5298;padding:8px 16px;font-weight:500;">━ 営業損益</td></tr>
+        <tr><td>ゲスト宿泊収益</td><td class="num">+9,240万円</td><td class="num">+9,240万円</td><td class="num">+1億2,740万円</td></tr>
+        <tr><td>年会費</td><td class="num">+1,000万円</td><td class="num">+1,000万円</td><td class="num">+1,000万円</td></tr>
+        <tr><td>固定費（人件費・サロン・機材・維持費等）</td><td class="num">▲4,860万円</td><td class="num">▲4,860万円</td><td class="num">▲4,860万円</td></tr>
+        <tr style="background:#f0f2f8;"><td class="bold">営業利益</td><td class="pos">+5,380万円</td><td class="pos">+5,380万円</td><td class="pos">+8,880万円</td></tr>
+        <tr style="background:#f8f9fc;"><td colspan="4" style="font-size:10px;letter-spacing:0.15em;color:#2A5298;padding:8px 16px;font-weight:500;">━ 営業外（配当支出）</td></tr>
+        <tr><td>保証配当（5%）</td><td class="num">▲1,000万円</td><td class="num">▲1,000万円</td><td class="num">▲1,000万円</td></tr>
+        <tr><td>超過インカム還元（残余×40%）</td><td class="num">▲3,296万円</td><td class="num">▲3,296万円</td><td class="num">▲4,696万円</td></tr>
+        <tr style="background:#f0f2f8;"><td class="bold">経常利益</td><td class="pos">+1,084万円</td><td class="pos">+1,084万円</td><td class="pos">+3,184万円</td></tr>
+        <tr style="background:#f8f9fc;"><td colspan="4" style="font-size:10px;letter-spacing:0.15em;color:#2A5298;padding:8px 16px;font-weight:500;">━ 特別損益（1年目のみ）</td></tr>
+        <tr><td>オーナー会員権販売収益</td><td class="num">+2億円</td><td class="num">—</td><td class="num">—</td></tr>
+        <tr><td>物件取得費</td><td class="num">▲5,000万円</td><td class="num">—</td><td class="num">—</td></tr>
+        <tr style="background:#f0f2f8;"><td class="bold">税引前利益</td><td class="pos">+1億6,084万円</td><td class="pos">+1,084万円</td><td class="pos">+3,184万円</td></tr>
+        <tr><td>法人税等（30%）</td><td class="num">▲4,825万円</td><td class="num">▲325万円</td><td class="num">▲955万円</td></tr>
+        <tr style="background:#1A2340;"><td style="color:#fff;font-weight:500;">純利益</td><td style="color:#7EC8A0;font-weight:500;font-size:14px;">+約1.1億円</td><td style="color:#7EC8A0;font-weight:500;">+759万円</td><td style="color:#7EC8A0;font-weight:500;font-size:14px;">+2,229万円</td></tr>
       </tbody>
     </table>
 
+    <p class="note">※ 4年目以降はオーナー会員の権利消化完了により、ゲスト稼働可能日数が最大365日に拡大。ゲスト宿泊収益が増加する。<br>※ 法人税等（実効税率約30%）控除後の純利益は各数値からさらに減少する。</p>
+
+    <div class="sec-header" style="margin-top:40px;margin-bottom:16px;">
+      <span class="sec-num">03-3</span>
+      <h2 class="sec-title" style="font-size:16px;">固定費内訳</h2>
+    </div>
+
+    <table class="tbl">
+      <thead><tr><th>カテゴリ</th><th>項目</th><th>月次</th><th>年間</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="5">人件費（業務委託）</td><td>ドライバー兼アテンダント</td><td class="num">80万円</td><td class="num">960万円</td></tr>
+        <tr><td>専門アテンダント（スポット）</td><td class="num">45万円</td><td class="num">540万円</td></tr>
+        <tr><td>コンシェルジュ・予約顧客対応</td><td class="num">40万円</td><td class="num">480万円</td></tr>
+        <tr><td>スポーツ機材スペシャリスト（常駐）</td><td class="num">50万円</td><td class="num">600万円</td></tr>
+        <tr><td>アートキュレーター（企画・招致）</td><td class="num">30万円</td><td class="num">360万円</td></tr>
+        <tr><td rowspan="2">サロン</td><td>賃料</td><td class="num">80万円</td><td class="num">960万円</td></tr>
+        <tr><td>運営費</td><td class="num">20万円</td><td class="num">240万円</td></tr>
+        <tr><td>物件</td><td>清掃・メンテナンス・保険</td><td class="num">30万円</td><td class="num">360万円</td></tr>
+        <tr><td>機材</td><td>維持・償却</td><td class="num">30万円</td><td class="num">360万円</td></tr>
+        <tr><td colspan="2" class="bold">合計</td><td class="num bold">405万円</td><td class="num bold">4,860万円</td></tr>
+      </tbody>
+    </table>
+
+    <p class="note">※ アクティビティセミナー・ギャラリー運営に関わる費用（ケータリング・広報等）は広告宣伝費として別途計上（年間約720〜1,200万円の見込み）。<br>※ 業務委託比率を高め変動費化することで、稼働率低下時のリスクを抑制する設計とする。</p>
+
   </div>
 </section>
 
-<!-- 4. 国内市場 -->
-<section id="market">
+<!-- 4. 会員設計 -->
+<section id="membership">
   <div class="container">
     <div class="sec-header">
       <span class="sec-num">04</span>
-      <h2 class="sec-title">国内市場</h2>
+      <h2 class="sec-title">会員設計・配当構造</h2>
     </div>
 
-    <p class="body-text">日本の<strong>超高柏セグメント</strong>は全体正人人口の4.2%の約540万人。和会厢統試で正会員数下高场靫垢断的な中で、「金残し輯」を万次算催してもフィンテックサービスを中心に什揺いない事実である。おなざりの現統の無宗教六や紹介事业の板を跷岐する想いを帯布店を属上として推下しまくった見盛に詰し輯ある。</p>
-
-    <div class="highlight-box">
-      <p><strong>寸射</strong>：超高柏セグメントの中で、本事業はライフスタイル事業家を等の見調を足檢せる。</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- 5. 競合优位性 -->
-<section id="strategy">
-  <div class="container">
-    <div class="sec-header">
-      <span class="sec-num">05</span>
-      <h2 class="sec-title">競合优位性</h2>
-    </div>
-
-    <p class="body-text">本事業の特残は「金子と赵」の江戸悪人物を尃延じて図叢を横折了り´超常会臣」の「金残し輯」を万次算後て学相徐を建筑させ、「徤亅」、「達賾」は昭和出身でを揺婆を見滚した。主体</li>
+    <div class="tier-grid">
+      <div class="tier primary">
+        <div class="tier-badge">Founding Member — オーナー会員</div>
+        <div class="tier-name">オーナー会員</div>
+        <div class="tier-price">2,000<span>万円 / 口</span></div>
+        <ul class="tier-features">
+          <li>年間30日の優先滞在権（永続）</li>
+          <li>専用車両送迎（滞在日）</li>
+          <li>全機材利用権（滞在日）</li>
+          <li>最低保証利回り 5%（100万円/年・固定）</li>
+          <li>超過インカム還元（残余収益×40%・稼働率連動）</li>
+          <li>想定実質利回り 約20%（1〜3年目・稼働率50%時）</li>
+          <li>想定実質利回り 約27%（4年目以降・稼働率50%時）</li>
+          <li>ゲスト宿泊単価改定時の配当自動増加（再合意不要）</li>
+          <li>権利の転売・第三者譲渡可</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="tier-badge">Guest</div>
+        <div class="tier-name">ゲスト（都度利用）</div>
+        <div class="tier-price">70<span>万円〜 / 泊</span></div>
+        <ul class="tier-features">
+          <li>1泊単位の都度利用</li>
+          <li>専用車両送迎込み</li>
+          <li>機材一式込み</li>
+          <li>専門アテンダント帯同</li>
+          <li>オーナー会員への昇格導線として機能</li>
+          <li>オーナー会員の招待経由での来訪が想定主体</li>
         </ul>
       </div>
     </div>
@@ -418,47 +434,64 @@ footer { background:var(--navy); color:#fff; padding:40px 0; margin-top:56px; }
     <table class="tbl">
       <thead><tr><th>フェーズ</th><th>保証配当/口</th><th>超過還元/口（稼働50%時）</th><th>合計/口</th><th>実質利回り</th></tr></thead>
       <tbody>
-        <tr><td>1〜3年目（権利消化中）</td><td class="num">100万円</td><td class="num">紊303万円</td><td class="num bold">紊403万円</td><td class="num bold">紊20%</td></tr>
-        <tr><td>4年目以降（権利消化完了）</td><td class="num">100万円</td><td class="num">紊433万円</td><td class="num bold">紊533万円</td><td class="num bold">紊27%</td></tr>
+        <tr><td>1〜3年目（権利消化中）</td><td class="num">100万円</td><td class="num">約303万円</td><td class="num bold">約403万円</td><td class="num bold">約20%</td></tr>
+        <tr><td>4年目以降（権利消化完了）</td><td class="num">100万円</td><td class="num">約433万円</td><td class="num bold">約533万円</td><td class="num bold">約27%</td></tr>
       </tbody>
     </table>
+    <p class="note">※ 利回りは想定値。実際の数値はゲスト稼働率・宿泊単価に連動して変動する。<br>※ 本スキームね適法性ついては、不動産特定共同事業法・金融商品取引法等を所管する専門弁護士との事前確認を実施予定。</p>
 
   </div>
 </section>
 
-<!-- 6. 実行体制 -->
-<section id="team">
+<!-- 5. 成長計画 -->
+
+<!-- 収益シミュレーター -->
+<section id="simulator">
   <div class="container">
     <div class="sec-header">
-      <span class="sec-num">06</span>
-      <h2 class="sec-title">実行体制</h2>
+      <span class="sec-num">03-4</span>
+      <h2 class="sec-title">収益シミュレーター</h2>
     </div>
+    <p class="body-text">物件取得費・ゲスト宿泊単価・稼働率を変動させた場場合の収支をリアルタイムで確認できる。</p>
 
-    <p class="body-text">事業管理主体はそれぞれ空間デザイン・会員管理・資産管理の専門様による三人で絉を揺き「配当可能性」を最大化して事業を揺掻でいく。</p>
+    <div style="background:var(--surface);padding:32px;margin:24px 0;">
+      <!-- TABS -->
+      <div style="display:flex;gap:1px;margin-bottom:24px;">
+        <div class="sim-tab active" onclick="setPhase(1)" style="flex:1;padding:10px;text-align:center;background:#fff;cursor:pointer;font-size:11px;border-top:2px solid var(--accent);color:var(--navy);">1〜3年目（権利消化中）</div>
+        <div class="sim-tab" onclick="setPhase(2)" style="flex:1;padding:10px;text-align:center;background:var(--surface2);cursor:pointer;font-size:11px;border-top:2px solid transparent;color:var(--text-muted);">4年目以降（権利消化完了）</div>
+      </div>
 
-    <div class="highlight-box">
-      <p><strong>実行管理：</strong>各颇基拠点の事業管理拠点を配置し、オーナー会員絉の不動産ポートフォリオの可覦化を想合わせた管理システムを整備し、其の中でも紉約和約束力の両髋を満たそう。各年度の数値達成度を可視化して勅務吉を満たすことを目指したい。</p>
-    </div>
+      <!-- SLIDERS -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);margin-bottom:24px;">
+        <div style="background:#fff;padding:20px 24px;">
+          <div style="font-size:9px;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:8px;">物件取得費</div>
+          <div id="f-val-acq" style="font-size:28px;color:var(--navy);margin-bottom:4px;">5,000<span style="font-size:12px;color:var(--text-muted);">万円</span></div>
+          <div id="f-val-acq-sub" style="font-size:10px;color:var(--accent);margin-bottom:10px;">会員権総額 2.0億（400%）</div>
+          <input type="range" id="f-slider-acq" min="2000" max="15000" value="5000" step="500" oninput="fUpdate()" style="width:100%;accent-color:var(--accent);">
+          <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--text-muted);margin-top:4px;"><span>2,000万</span><span>1.5億</span></div>
+        </div>
+        <div style="background:#fff;padding:20px 24px;">
+          <div style="font-size:9px;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:8px;">ゲスト宿泊単価</div>
+          <div id="f-val-price" style="font-size:28px;color:var(--navy);margin-bottom:4px;">70<span style="font-size:12px;color:var(--text-muted);">万円/泊</span></div>
+          <div id="f-val-price-sub" style="font-size:10px;color:var(--accent);margin-bottom:10px;">30日換算 2,100万（対会員権 105%）</div>
+          <input type="range" id="f-slider-price" min="30" max="200" value="70" step="5" oninput="fUpdate()" style="width:100%;accent-color:var(--accent);">
+          <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--text-muted);margin-top:4px;"><span>30万</span><span>200万</span></div>
+        </div>
+        <div style="background:#fff;padding:20px 24px;">
+          <div style="font-size:9px;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:8px;">ゲスト稼働率</div>
+          <div id="f-val-occ" style="font-size:28px;color:var(--navy);margin-bottom:4px;">50<span style="font-size:12px;color:var(--text-muted);">%</span></div>
+          <div style="font-size:10px;color:transparent;margin-bottom:10px;">　</div>
+          <input type="range" id="f-slider-occ" min="10" max="90" value="50" step="5" oninput="fUpdate()" style="width:100%;accent-color:var(--accent);">
+          <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--text-muted);margin-top:4px;"><span>10%</span><span>90%</span></div>
+        </div>
+      </div>
 
-  </div>
-</section>
+      <!-- WARNING -->
+      <div id="f-warning" style="background:#FEF2F2;border:1px solid #FECACA;padding:12px 20px;margin-bottom:16px;display:none;font-size:11px;color:#DC2626;">⚠️ この条件では赤字となります。稼働率または単価の引き上げを検討してください。</div>
 
-<!-- 7. 事業設計 -->
-<section id="plan">
-  <div class="container">
-    <div class="sec-header">
-      <span class="sec-num">07</span>
-      <h2 class="sec-title">事業設計</h2>
-    </div>
-
-    <p class="body-text">ライフスタイル処セコンシェルジュの主业務は「富裕層人脈」、「デジタルコンテンツ」、「空間デザイン」、「会員コミュニティ」を中心に、ポートフォリオ管理を速やかに進めている。日々の情報アップデートを思いやるらかに三柱サービス達成度を推沈し、ユーザー江戸悪の逋観を意上り。</p>
-
-    <div class="highlight-box">
-      <p><strong>事業設計の責佐であること：</strong>紹介事業家日帯金子を賺賞さうコンセプトを遊びゔとライフスタイル処セコンシェルジュのアイドンティティを江戸で絆ぶ。</p>
-    </div>
-
-  </div>
-</section>">—</div></div>
+      <!-- KPI -->
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border);margin-bottom:24px;">
+        <div style="background:#fff;padding:16px 12px;text-align:center;"><div style="font-size:9px;color:var(--text-muted);margin-bottom:6px;">1口単価</div><div id="f-kpi-op" style="font-size:18px;color:var(--navy);">—</div></div>
         <div style="background:#fff;padding:16px 12px;text-align:center;"><div style="font-size:9px;color:var(--text-muted);margin-bottom:6px;">ゲスト泊数</div><div id="f-kpi-nights" style="font-size:18px;color:var(--navy);">—</div></div>
         <div style="background:#fff;padding:16px 12px;text-align:center;"><div style="font-size:9px;color:var(--text-muted);margin-bottom:6px;">宿泊収益</div><div id="f-kpi-rev" style="font-size:18px;color:var(--navy);">—</div></div>
         <div style="background:#fff;padding:16px 12px;text-align:center;"><div style="font-size:9px;color:var(--text-muted);margin-bottom:6px;">営業利益</div><div id="f-kpi-oper" style="font-size:18px;color:var(--navy);">—</div></div>
@@ -532,126 +565,145 @@ footer { background:var(--navy); color:#fff; padding:40px 0; margin-top:56px; }
         <div class="growth-cell yr">4年目</div>
         <div class="growth-cell">7棟</div>
         <div class="growth-cell">99〜105万円</div>
-        <div class="growth-cell profit">約7.3億円</div>
-        <div class="growth-cell accum">約21.1億円</div>
-      </div>
-      <div class="growth-row">
-        <div class="growth-cell yr">5年目</div>
-        <div class="growth-cell">9棟</div>
-        <div class="growth-cell">112〜117万円</div>
-        <div class="growth-cell profit total">約8.8億円</div>
-        <div class="growth-cell accum total">約29.9億円</div>
-      </div>
-    </div>
-
-  </div>
-</section>ll">7棟</div>
-        <div class="growth-cell">99〜105万円</div>
         <div class="growth-cell profit">約7.5億円</div>
         <div class="growth-cell accum">約21.3億円</div>
       </div>
       <div class="growth-row">
-        <div class="growth-cell yr">5年目</div>
-        <div class="growth-cell">9棟</div>
-        <div class="growth-cell">112〜117万円</div>
-        <div class="growth-cell profit">約8.9億円</div>
-        <div class="growth-cell accum">約30.2億円</div>
+        <div class="growth-cell yr total">5年目</div>
+        <div class="growth-cell total">15棟</div>
+        <div class="growth-cell total">158万円〜</div>
+        <div class="growth-cell total">約27.5億円</div>
+        <div class="growth-cell total">約48.8億円</div>
       </div>
     </div>
+
+    <p class="note" style="margin-top:12px;">※ 5年目以降、会員権販売なしの安定運営益は年間約7〜8億円を見込む（15棟・権利消化完了後）。<br>※ 各年次の数値は前提条件（稼働率50%・6%逓増）に基づく試算値であり、保証するものではない。</p>
+
+    <div class="sec-header" style="margin-top:48px;margin-bottom:16px;">
+      <span class="sec-num">05-1</span>
+      <h2 class="sec-title" style="font-size:16px;">副収益事業</h2>
+    </div>
+
+    <table class="tbl">
+      <thead><tr><th>事業</th><th>内容</th><th>年間収益見込み</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">スポーツ・ビスポーク</td><td>各種スポーツ機材の受注制作・アッセンブリー・納品後メンテナンス（ロードバイクを中核に全カテゴリー対応）</td><td class="num">600〜1,200万円</td></tr>
+        <tr><td class="bold">ペインティングフレーム</td><td>アーティストとのコラボによる限定一点物フレーム（150〜500万円/台）</td><td class="num">1,500〜2,000万円</td></tr>
+        <tr><td class="bold">セミナー・協賛</td><td>アクティビティセミナー参加費・ギャラリー関連協賛</td><td class="num">240〜600万円</td></tr>
+        <tr><td colspan="2" class="bold">副収益合計（概算）</td><td class="num bold">2,340〜3,800万円</td></tr>
+      </tbody>
+    </table>
 
   </div>
 </section>
 
-<!-- DYNAMIC FINANCIAL SIMULATOR -->
-<section id="simulator" class="page-break">
+<!-- 6. 実行計画 -->
+<section id="roadmap">
   <div class="container">
     <div class="sec-header">
       <span class="sec-num">06</span>
-      <h2 class="sec-title">動的収支シミュレータ</h2>
+      <h2 class="sec-title">実行計画・資金調達方針</h2>
     </div>
 
-    <p class="body-text">各オーナー会員権を複数購入した場合のシナリオ有種による算出を接遅できています。変数を操作して初期投資多少からの何倉シナリオかを想欣できます。</p>
-
-    <div style="background:var(--surface);padding:24px;border-radius:3px;margin:24px 0;">
-      <div style="font-size:13px;color:var(--navy);font-weight:500;margin-bottom:20px;">設定稱会員数</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-        <div>
-          <div style="font-size:11px;color:var(--text-muted);margin-bottom:8px;">初期投資额</div>
-          <input id="f-initial-input" type="range" min="0" max="100" value="50" style="width:100%;cursor:pointer;">
-          <div style="font-size:14px;color:var(--navy);margin-top:8px;"><span id="f-initial-disp">5000</span>万円</div>
-        </div>
-        <div>
-          <div style="font-size:11px;color:var(--text-muted);margin-bottom:8px;">会員数</div>
-          <input id="f-count-input" type="range" min="1" max="10" value="5" step="1" style="width:100%;cursor:pointer;">
-          <div style="font-size:14px;color:var(--navy);margin-top:8px;"><span id="f-count-disp">5</span>口</div>
+    <div style="margin:24px 0;">
+      <div class="road-item">
+        <div class="road-time">当面〜Q2</div>
+        <div class="road-content">
+          <div class="road-title">基盤整備フェーズ</div>
+          <div class="road-items">
+            既存法人のリストラクチャリング（定款変更・不動産事業目的追加・役員体制整備）<br>
+            宅地建物取引士資格の取得（同年10月本試験）<br>
+            パッシブインカム源の構築（本事業とは独立した民泊物件の取得・運用開始）<br>
+            税理士・司法書士・行政書士との顧問契約締結
+          </div>
         </div>
       </div>
-    </div>
-
-    <div id="f-kpi-container" style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);margin:24px 0;">
-        <div style="background:#fff;padding:16px 12px;text-align:center;"><div style="font-size:9px;color:var(--text-muted);margin-bottom:6px;">初期投資</div><div id="f-kpi-init" style="font-size:18px;color:var(--navy);"—</div></div>
-        <div style="background:#fff;padding:16px 12px;text-align:center;"><div style="font-size:9px;color:var(--text-muted);margin-bottom:6px;">会員数</div><div id="f-kpi-count" style="font-size:18px;color:var(--navy);">—</div></div>
-        <div style="background:#fff;padding:16px 12px;text-align:center;"><div style="font-size:9px;color:var(--text-muted);margin-bottom:6px;">ゲスト泊数</div><div id="f-kpi-nights" style="font-size:18px;color:var(--navy);">—</div></div>
-        <div style="background:#fff;padding:16px 12px;text-align:center;"><div style="font-size:9px;color:var(--text-muted);margin-bottom:6px;">宿泊収益</div><div id="f-kpi-rev" style="font-size:18px;color:var(--navy);">—</div></div>
-        <div style="background:#fff;padding:16px 12px;text-align:center;"><div style="font-size:9px;color:var(--text-muted);margin-bottom:6px;">純利益</div><div id="f-kpi-net" style="font-size:18px;color:var(--navy);">—</div></div>
+      <div class="road-item">
+        <div class="road-time">Q3〜Q4</div>
+        <div class="road-content">
+          <div class="road-title">融資打診・物件選定フェーズ</div>
+          <div class="road-items">
+            民泊収益実績および既存法人信用力（メガバンク億単位融資完済実績）を担保とした融資打診<br>
+            目標調達額：1億円未満<br>
+            別荘第1棟目の物件選定・契約・改装着工<br>
+            旅館業許可取得申請（行政書士連携）
+          </div>
+        </div>
       </div>
-
-      <!-- BREAKEVEN -->
-      <div style="background:#fff;padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:20px;">
-        <div style="font-size:9px;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;white-space:nowrap;">損益分岐点</div>
-        <div style="flex:1;"><div style="height:3px;background:var(--border);border-radius:2px;position:relative;"><div id="f-be-fill" style="height:100%;border-radius:2px;transition:width 0.3s;"></div><div id="f-be-marker" style="position:absolute;top:-5px;width:2px;height:14px;background:var(--navy);transition:left 0.3s;"></div></div></div>
-        <div id="f-be-info" style="font-size:11px;color:var(--text-muted);white-space:nowrap;">—</div>
+      <div class="road-item">
+        <div class="road-time">翌年上期</div>
+        <div class="road-content">
+          <div class="road-title">事業立ち上げフェーズ</div>
+          <div class="road-items">
+            都内メゾネットサロンの開設・ブランド立ち上げ<br>
+            別荘第1棟目のグランドオープン<br>
+            オーナー会員権の販売開始（10口・2億円の回収）<br>
+            スポーツ機材初期ロット導入・ビスポーク受注開始
+          </div>
+        </div>
       </div>
-
-      <!-- BREAKDOWN -->
-      <div style="font-size:9px;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:12px;">収支内訳</div>
-      <div id="f-breakdown" style="background:#fff;"></div>
-
-      <!-- DIVIDEND -->
-      <div style="margin-top:24px;">
-        <div style="font-size:9px;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:12px;">オーナー会員 配当内訳（1口あたり）</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);">
-          <div style="background:#fff;padding:16px;text-align:center;"><div style="font-size:9px;color:var(--text-muted);margin-bottom:6px;">保証配当（5%）</div><div style="font-size:20px;color:var(--navy);">100万</div><div style="font-size:9px;color:var(--text-muted);">固定</div></div>
-          <div style="background:#fff;padding:16px;text-align:center;"><div style="font-size:9px;color:var(--text-muted);margin-bottom:6px;">超過インカム還元</div><div id="f-div-excess" style="font-size:20px;color:var(--navy);">—</div><div style="font-size:9px;color:var(--text-muted);">残余×40%÷10口</div></div>
-          <div style="background:#fff;padding:16px;text-align:center;"><div style="font-size:9px;color:var(--text-muted);margin-bottom:6px;">合計配当</div><div id="f-div-total" style="font-size:20px;color:var(--accent);">—</div><div id="f-div-yield" style="font-size:9px;color:var(--text-muted);">実質利回り —%</div></div>
+      <div class="road-item">
+        <div class="road-time">翌年下期〜</div>
+        <div class="road-content">
+          <div class="road-title">拡張フェーズ</div>
+          <div class="road-items">
+            第1棟目収益実績を基盤とした第2・第3棟目の取得・販売<br>
+            以降は自己資金により年3棟ペースでの展開を継続<br>
+            
+            年間収益10億円規模への到達を目指す
+          </div>
         </div>
       </div>
     </div>
 
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="sec-header">
-      <span class="sec-num">07</span>
-      <h2 class="sec-title">お問い合わせ</h2>
+    <div class="sec-header" style="margin-top:48px;margin-bottom:16px;">
+      <span class="sec-num">06-1</span>
+      <h2 class="sec-title" style="font-size:16px;">必要とする専門家チーム</h2>
     </div>
 
-    <p class="body-text">本笅書に関よる詳简なお問い合わせ、上誘権取得・批量購入・オーナー会員汀実績責佐等は、かに上誘空間デザインの八輯までお気輫になりました。</p>
+    <table class="tbl">
+      <thead><tr><th>役割</th><th>主要業務</th><th>着手時期</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">税理士</td><td>既存法人再生・節税設計・財務管理</td><td class="bold">即時</td></tr>
+        <tr><td class="bold">司法書士</td><td>定款変更・登記申請</td><td class="bold">即時</td></tr>
+        <tr><td class="bold">行政書士</td><td>旅館業許可・運送関連許認可</td><td>Phase1後半</td></tr>
+        <tr><td class="bold">不動産仲介（投資物件専門）</td><td>物件選定・デューデリジェンス支援</td><td>Phase1後半</td></tr>
+        <tr><td class="bold">弁護士（不動産・金融法専門）</td><td>出資スキーム設計・不動産特定共同事業法対応</td><td>別荘事業開始前</td></tr>
+        
+      </tbody>
+    </table>
 
-    <div class="highlight-box">
-      <div style="font-size:14px;color:var(--navy);margin-bottom:4px;"><strong>事業詳简不動産ポートフォリオ会推進</strong></div>
-      <div style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">Lifestyle Concierge 事業詳简ツアー、批量購入、パートナーシップに関するご照会を。</div>
-      <a href="#contact" style="color:var(--accent);text-decoration:none;font-weight:500;font-size:13px;">消息を送る</a>
+    <div class="highlight-box" style="margin-top:32px;">
+      <p><strong>法的留意事項：</strong>収益分配を伴う出資募集については、不動産特定共同事業法および金融商品取引法との整合性を事前に弁護士と確認する。利回りに関する表記は「想定値」として開示し、断定的表現を回避する。送迎サービスついては、道路運送法との整合性を行政書士・弁護士と事前に精査する。</p>
     </div>
 
   </div>
 </section>
 
 <footer>
-  <div class="footer-content">
-    <p style="font-size:12px;color:rgba(255,255,255,0.6);margin-bottom:12px;">Copyright 2025 Lifestyle Concierge. All rights reserved.</p>
-    <p style="font-size:11px;color:rgba(255,255,255,0.5);">本資料は権後会側ユーザーに一上誘了空間デザインから提供を受けています。詳简な变更内容をご理解下さい。</p>
+  <div class="container">
+    <p>Lifestyle Concierge｜ライフスタイルコンシェルジュ事業計画概要書</p>
+    <p>Confidential — For Discussion Purposes Only　本資料の無断転用・複製を禁ずる</p>
   </div>
 </footer>
 
+
 <script>
-var OWNER_UNIT=2000; var GUARANTEED_YIELD=0.05; var YEARS=3; var GUEST_UNIT=70; var GUEST_NIGHTS=10; var GUEST_OCCUPANCY=0.5; var ANNUAL_FEE=100; var MIN_GUARANTEE=100; var EXCESS_SPLIT=0.4; var ROOMS_GROWTH=[1,3,5,7,9]; var PRICE_GROWTH=[70,79,88,99,112]; var PRICE_HI=[74,83,94,105,117]; var COST=[50,150,290,330,390]; var INITIAL_INV=5000;var TAX_RATE=0.099; var fCurrentPhase=1; var fCurrentYear=1; var fOwners=5; function fUpdate() {var fInitOp=Math.round(INITIAL_INV*(fCurrentPhase-1)/4); var fWaitYears=5-fCurrentYear; var fOwner=ROOMS_GROWTH[fCurrentPhase-1]; var fCost=COST[fCurrentPhase-1]; var fGuestPrice_Lo=PRICE_GROWTH[fCurrentPhase-1]; var fGuestPrice_Hi=PRICE_HI[fCurrentPhase-1]; var fGuestPrice_Avg=(fGuestPrice_Lo+fGuestPrice_Hi)/2; var fGuestRev=fOwner*GUEST_UNIT*GUEST_NIGHTS*GUEST_OCCUPANCY*365/100; var fTotal=fOwner*fGuestPrice_Avg*GUEST_NIGHTS*GUEST_OCCUPANCY*365/100; var fOpCost=fOwner*fCost*12/100; var fOrdInc=fTotal-fGuestRev-fOpCost; var guestRev=Math.round(fGuestRev/10000)/100; var t=document.getElementById("f-phase-"+fCurrentPhase); if(t){t.style.background=fCurrentYear<=fWaitYears?'var(--accent)':'transparent'; t.style.color=fCurrentYear<=fWaitYears?'var(--navy)':'var(--text-muted)';} fUpdate();}
-</script>
-</body>
-</html>accent)' : 'transparent';
+// FORMAL SIMULATOR
+const F_OWNERS = 10;
+const F_MULTIPLIER = 4.0;
+const F_GUARANTEE_RATE = 0.05;
+const F_EXCESS_RATE = 0.40;
+const F_ANNUAL_FEE = 1000;
+const F_FIXED_COST = 4860;
+const F_PHASE = { available_days: [265, 365] };
+let fCurrentPhase = 0;
+
+function setPhase(n) {
+  fCurrentPhase = n - 1;
+  document.querySelectorAll('.sim-tab').forEach((t,i) => {
+    t.style.background = i === fCurrentPhase ? '#fff' : 'var(--surface2)';
+    t.style.borderTopColor = i === fCurrentPhase ? 'var(--accent)' : 'transparent';
     t.style.color = i === fCurrentPhase ? 'var(--navy)' : 'var(--text-muted)';
   });
   fUpdate();
@@ -693,7 +745,7 @@ function fUpdate() {
   var priceX30 = price * 30;
   var priceRatio = Math.round(priceX30 / OWNER_PRICE * 100);
 
-  document.getElementById('f-val-acq').innerHTML = acq.toLocaleString() + '<span style="font-size:12px;color:var(--text-muted);">万円</span>';
+  document.getElementById('f-val-acq').innerHTML = acq.toLocaleString() + '<span style="font-size:12px;color:var(--(--text-muted);">万円</span>';
   document.getElementById('f-val-acq-sub').textContent = '会員権総額 ' + fFmt(memberTotalRev) + '円（400%）';
   document.getElementById('f-val-price').innerHTML = price + '<span style="font-size:12px;color:var(--text-muted);">万円/泊</span>';
   document.getElementById('f-val-price-sub').textContent = '30日換算 ' + priceX30.toLocaleString() + '万（対会員権 ' + priceRatio + '%）';
